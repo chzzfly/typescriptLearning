@@ -59,28 +59,52 @@
 
 // interface
 
-interface Calendar {
+// interface Calendar {
+//   name: string;
+//   addEvent(): void;
+//   removeEvent(): void;
+// }
+
+// interface CloudCalendar extends Calendar {
+//   sync(): void;
+// }
+
+// class GoogleCalendar implements Calendar {
+//   // 这三行等同于下面一行
+//   // name: string;
+//   // constructor(name: string) {
+//   //   this.name = name;
+//   // }
+//   constructor(public name: string) {}
+
+//   addEvent(): void {
+//     throw new Error("Method not implemented.");
+//   }
+//   removeEvent(): void {
+//     throw new Error("Method not implemented.");
+//   }
+// }
+
+// generic 泛型
+
+const wrapInArray = <T>(value: T) => [value];
+
+let numbers = wrapInArray(1);
+let strings = wrapInArray("1");
+
+// interface 和 class 的两种写法
+
+interface Person {
   name: string;
-  addEvent(): void;
-  removeEvent(): void;
 }
 
-interface CloudCalendar extends Calendar {
-  sync(): void;
+class Person1 {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
 }
 
-class GoogleCalendar implements Calendar {
-  // 这三行等同于下面一行
-  // name: string;
-  // constructor(name: string) {
-  //   this.name = name;
-  // }
+class Person2 {
   constructor(public name: string) {}
-
-  addEvent(): void {
-    throw new Error("Method not implemented.");
-  }
-  removeEvent(): void {
-    throw new Error("Method not implemented.");
-  }
 }
