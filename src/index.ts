@@ -17,11 +17,14 @@ function calcTax(income: number, taxYear: number = 2022): number {
 calcTax(6700, 2021);
 
 // object
-let employee: {
+// type aliases
+type Employee = {
   readonly id: number;
   name: string;
   retire: (date: Date) => void;
-} = {
+};
+
+let employee: Employee = {
   id: 1,
   name: "",
   retire(date) {
